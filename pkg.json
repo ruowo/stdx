@@ -1,3 +1,9 @@
 {
-  "name": "stdx"
+  "name": "stdx",
+  "pkg": {
+    "scripts": [
+      "node_modules/nyc/lib/**",
+      "node_modules/nyc/bin/**"
+    ]
+  }
 }

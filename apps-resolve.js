@@ -1,0 +1,7 @@
+require.resolve("nyc/bin/nyc.js")
+require.resolve("nyc")
+require.resolve("nyc/bin/wrap.js")
+require.resolve("ava/cli.js")
+require.resolve("ava")
+require.resolve("standard/bin/cmd.js")
+require.resolve("standard")

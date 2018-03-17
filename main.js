@@ -25,42 +25,48 @@ ancestor.require = Module.prototype.require
 ancestor._resolveFilename = Module._resolveFilename
 ancestor._compile = Module.prototype._compile
 
-Module.prototype.require = function () {
+Module.prototype.require = function (file) {
   var args = arguments
-  var filename = args[0].split('/')[0]
-  if (entries.indexOf(filename) !== -1) {
-    args[0] = path.join(__dirname, 'node_modules', args[0])
-    console.log('require', args)
+  if (file) {
+    var filename = file.split('/')[0]
+    if (entries.indexOf(filename) !== -1) {
+      args[0] = path.join(__dirname, 'node_modules', file)
+      console.log('require', args)
+    }
   }
   return ancestor.require.apply(this, args)
 }
 
 Module.prototype._compile = function (content, filename_) {
   var args = arguments
-  var filename = filename_.split('/')[0]
-  if (entries.indexOf(filename) !== -1) {
-    args[0] = path.join(__dirname, 'node_modules', filename_)
+  if (filename_) {
+    var filename = filename_.split('/')[0]
+    if (entries.indexOf(filename) !== -1) {
+      args[0] = path.join(__dirname, 'node_modules', filename_)
+    }
   }
   return ancestor._compile.apply(this, args)
 }
 
 Module._resolveFilename = function (file) {
   var args = arguments
-  var filename = file.split('/')[0]
-  if (entries.indexOf(filename) !== -1) {
-    args[0] = path.join(__dirname, 'node_modules', args[0])
+  if (file) {
+    var filename = file.split('/')[0]
+    if (entries.indexOf(filename) !== -1) {
+      args[0] = path.join(__dirname, 'node_modules', args[0])
+    }
   }
   return ancestor._resolveFilename.apply(this, args)
 }
 
-require.resolve('ava')
-require.resolve('nyc')
 require.resolve('babel-register')
 require.resolve('chai')
-require.resolve('standard')
-require.resolve('standard/bin/cmd.js')
 require.resolve('babel-eslint')
 require.resolve('babel-core')
 
-Module._load(entrypoint, null, true)
-process._tickCallback()
+require('./apps-resolve.js')
+
+if (entrypoint) {
+  Module._load(entrypoint, null, true)
+  process._tickCallback() 
+}

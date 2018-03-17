@@ -95,6 +95,10 @@ function copyExec () {
 }
 
 function buildPkg () {
+  if (process.platform === 'win32') {
+    return Promise.all(Object.keys(targets).map(it => pack(it, targets[it])))
+  }
+  // travis 资源有限, 并行经常会失败...
   return Object.keys(targets).reduce((ret, it) => {
     return ret.then(() => {
       return pack(it, targets[it])
