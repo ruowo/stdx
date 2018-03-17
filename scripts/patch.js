@@ -15,6 +15,16 @@ fs.readFile(bootstrap, (err, data) => {
       process.exit(2)
     }
     data = data.substr(0, pos + find.length) + inject + data.substr(pos + find.length, data.length)
+    
+    find = 'error.message +='
+    pos = data.indexOf(find)
+    let find2 = `'process.execPath.';`
+    let pos2 = data.indexOf(find2)
+    if ((pos === -1) || (pos2 === -1)) {
+      console.error('can not match patch')
+      process.exit(2)
+    }
+    data = data.substr(0, pos) + data.substr(pos2 + find2.length, data.length)
     // console.log(data.substr(pos, inject.length + 20 + find.length))
     fs.writeFile(bootstrap, data, (err) => {
       if (err) {
