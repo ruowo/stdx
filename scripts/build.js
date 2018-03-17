@@ -10,7 +10,7 @@ function strip (pkg) {
   return JSON.stringify(pkg)
 }
 
-const pkg = path.resolve(`./node_modules/.bin/pkg${process.platform === 'win32' ? '.cmd' : ''}`)
+const pkg = `pkg${process.platform === 'win32' ? '.cmd' : ''}`
 const bin = apps.reduce((ret, it) => {
   ret[it] = `bin/${it}`
   return ret
