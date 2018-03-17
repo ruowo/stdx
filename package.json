@@ -15,8 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/std-tools/stdx.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "jetiny",
+    "email": "86287344@qq.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/std-tools/stdx/issues"
   },
