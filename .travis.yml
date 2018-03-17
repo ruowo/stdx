@@ -11,6 +11,7 @@ deploy:
 before_script:
   - export PKG_CACHE_PATH=`pwd`
 script:
+  - travis setup npm
   - npm run patch
   - npm run build
   - npm publish platform/win 
