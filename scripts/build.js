@@ -98,15 +98,15 @@ function buildPkg () {
 
 const version = 8
 const targets = {
-  win: {
-    target: `node${version}-win-x64`
-  },
+  // win: {
+  //   target: `node${version}-win-x64`
+  // },
   mac: {
     target: `node${version}-macos-x64`
   },
-  linux: {
-    target: `node${version}-linux-x64`
-  }
+  // linux: {
+  //   target: `node${version}-linux-x64`
+  // }
 }
 
 Promise.all([
