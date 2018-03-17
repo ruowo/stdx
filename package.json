@@ -1,0 +1,33 @@
+{
+  "name": "stdx",
+  "version": "1.0.0",
+  "description": "standard sav tools",
+  "bin": {
+    "nyc": "bin/nyc",
+    "ava": "bin/ava",
+    "standard": "bin/standard"
+  },
+  "scripts": {
+    "patch": "node ./scripts/patch.js",
+    "build": "node ./scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/std-tools/stdx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/std-tools/stdx/issues"
+  },
+  "homepage": "https://github.com/std-tools/stdx#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-eslint": "^8.2.2",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "nyc": "^11.6.0",
+    "pkg": "^4.3.0",
+    "standard": "^11.0.1"
+  }
+}

@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+/package-lock.json
+/platform/linux
+/platform/mac
+/platform/win
