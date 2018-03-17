@@ -22,7 +22,7 @@ function pack (platform, opts) {
     let ps = childProcess.spawn(pkg, [
       '-t', opts.target,
       '--out-path', dist,
-      '--config', 'pkg.json', 'main.js'])
+      '--config', 'pkg.json', 'main.js'], { stdio: 'inherit' })
     ps.on('close', (code) => {
       if (code) {
         return reject(new Error(`${platform} error: ${code}`))
