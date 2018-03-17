@@ -19,6 +19,7 @@ const bin = apps.reduce((ret, it) => {
 function pack (platform, opts) {
   let dist = path.resolve('./platform/' + platform)
   return new Promise((resolve, reject) => {
+    console.log('--start:', platform)
     let ps = childProcess.spawn(pkg, [
       '-t', opts.target,
       '--out-path', dist,
@@ -27,6 +28,7 @@ function pack (platform, opts) {
       if (code) {
         return reject(new Error(`${platform} error: ${code}`))
       }
+      console.log('--done:', platform)
       resolve()
     })
   }).then(() => {
@@ -93,7 +95,11 @@ function copyExec () {
 }
 
 function buildPkg () {
-  return Promise.all(Object.keys(targets).map(it => pack(it, targets[it])))
+  return Object.keys(targets).reduce((ret, it) => {
+    return ret.then(() => {
+      return pack(it, targets[it])
+    })
+  }, Promise.resolve())
 }
 
 const version = 8
