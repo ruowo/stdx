@@ -114,10 +114,10 @@ Promise.all([
   copyExec(),
   createBin()
 ])
-.then(res => {
-  console.log('build done.')
-})
-.catch(err => {
-  console.error(err)
-  process.exit(1)
-})
+  .then(res => {
+    console.log('build done.')
+  })
+  .catch(err => {
+    console.error(err)
+    process.exit(1)
+  })
