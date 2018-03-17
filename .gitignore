@@ -62,3 +62,4 @@ typings/
 /platform/mac
 /platform/win
 /bin
+/cache
