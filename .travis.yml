@@ -11,9 +11,7 @@ script:
   - export PKG_CACHE_PATH=`pwd`/cache
   - npm run patch
   - npm run build
-  - cp ./.travis.yml platform/win/.travis.yml
-  - cp ./.travis.yml platform/mac/.travis.yml
-  - cp ./.travis.yml platform/linux/.travis.yml
+  - echo NPM_AUTH_TOKEN>~/.npmrc
   - npm publish platform/win 
   - npm publish platform/mac
   - npm publish platform/linux
