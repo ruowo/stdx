@@ -14,7 +14,8 @@ module.exports = {
     bin: 'standard/bin/cmd.js',
     api: [
       'standard',
-      'eslint-plugin-vue'
+      'eslint-plugin-vue',
+      'eslint-plugin-html',
     ]
   },
   rollup: {

@@ -5,6 +5,9 @@
       "node_modules/nyc/lib/**",
       "node_modules/nyc/bin/**",
       "node_modules/node-sass/vendor/**/**"
+    ],
+    "assets": [
+      "node_modules/standard-sass/dist/**/*.yml"
     ]
   }
 }
