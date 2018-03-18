@@ -132,15 +132,6 @@ let targets = {
   }
 }
 
-if (process.env.PKG_ONLY) {
-  let pkg = process.env.PKG_ONLY
-  for (let name in targets) {
-    if (name !== pkg) {
-      delete targets[name]
-    }
-  }
-}
-
 let platform
 switch (process.platform) {
   case 'win32':
@@ -152,6 +143,17 @@ switch (process.platform) {
   default:
     platform = 'linux'
     break
+}
+
+let defaultTarget = targets[platform]
+
+if (process.env.PKG_ONLY) {
+  let pkg = process.env.PKG_ONLY
+  for (let name in targets) {
+    if (name !== pkg) {
+      delete targets[name]
+    }
+  }
 }
 
 function getCacheList () {
@@ -230,5 +232,5 @@ module.exports = {
   addToCacheList,
   plog,
   readDir,
-  defaultTarget: targets[platform]
+  defaultTarget
 }

@@ -81,7 +81,7 @@ const platformMap = {
 
 function buildPkg (platform, config) {
   // 为了避开不必要的node扩展, 这个方法不能并行
-  return removeNodeAddins().then(resetNodeAddin({
+  return removeNodeAddins().then(() => resetNodeAddin({
     nodeVersion,
     platform: platformMap[platform]
   })).then(plog('buildPkg', `${platform}-node${nodeVersion} start`))

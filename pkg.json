@@ -3,11 +3,11 @@
   "pkg": {
     "scripts": [
       "node_modules/nyc/lib/**",
-      "node_modules/nyc/bin/**",
-      "node_modules/node-sass/vendor/**/**"
+      "node_modules/nyc/bin/**"
     ],
     "assets": [
-      "node_modules/standard-sass/dist/**/*.yml"
+      "node_modules/standard-sass/dist/**/*.yml",
+      "node_modules/node-sass/vendor/**/**"
     ]
   }
 }
