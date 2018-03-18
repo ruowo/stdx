@@ -3,7 +3,7 @@ const path = require('path')
 const fs = require('fs')
 
 function downloadNodeSassAddions () {
-  return Promise.all(['win32', 'darwin', 'linux'].map(it => {
+  return Promise.all(['win32', 'darwin', 'linux', 'freebsd', 'linux_musl'].map(it => {
     return spawn(path.join(__dirname, 'pnode/pnode'), 
       [require.resolve('node-sass/scripts/install')],
       {
@@ -23,7 +23,7 @@ function downloadNodeSassAddions () {
         str.replace(new RegExp(`\\${path.sep}`, 'g'), '@'))
       let info = {
         nodeVersion,
-        platform: it,
+        platform: ['freebsd', 'linux_musl'].indexOf(it) !== -1 ? 'linux' : it,
         src,
         dest
       }
