@@ -1,15 +1,17 @@
 {
   "name": "stdx",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "standard sav tools",
   "bin": {
     "nyc": "bin/nyc",
     "ava": "bin/ava",
-    "standard": "bin/standard"
+    "standard": "bin/standard",
+    "rollup": "bin/rollup",
+    "uglifyjs": "bin/uglifyjs",
+    "node-sass": "bin/node-sass"
   },
   "scripts": {
-    "patch": "node ./scripts/patch.js",
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +31,20 @@
     "babel-eslint": "^8.2.2",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "node-sass": "^4.7.2",
     "nyc": "^11.6.0",
     "pkg": "^4.3.0",
-    "standard": "^11.0.1"
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-includepaths": "^0.2.2",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-re": "^1.0.6",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
+    "rollup-pluginutils": "^2.0.1",
+    "standard": "^11.0.1",
+    "uglify-es": "^3.3.9"
   }
 }

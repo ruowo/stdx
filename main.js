@@ -25,14 +25,20 @@ ancestor.require = Module.prototype.require
 ancestor._resolveFilename = Module._resolveFilename
 ancestor._compile = Module.prototype._compile
 
+// function test (func, file, args) {
+//   if (file.indexOf('vue-template-compiler') !== -1) {
+//     console.log(func, file, args, process.cwd())
+//   }
+// }
+
 Module.prototype.require = function (file) {
   var args = arguments
   if (file) {
     var filename = file.split('/')[0]
     if (entries.indexOf(filename) !== -1) {
       args[0] = path.join(__dirname, 'node_modules', file)
-      console.log('require', args)
     }
+    // test('require', file, args)
   }
   return ancestor.require.apply(this, args)
 }
@@ -44,6 +50,7 @@ Module.prototype._compile = function (content, filename_) {
     if (entries.indexOf(filename) !== -1) {
       args[0] = path.join(__dirname, 'node_modules', filename_)
     }
+    // test('_compile', filename_, args)
   }
   return ancestor._compile.apply(this, args)
 }
@@ -55,6 +62,7 @@ Module._resolveFilename = function (file) {
     if (entries.indexOf(filename) !== -1) {
       args[0] = path.join(__dirname, 'node_modules', args[0])
     }
+    // test('_resolveFilename', file, args)
   }
   return ancestor._resolveFilename.apply(this, args)
 }

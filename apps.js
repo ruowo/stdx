@@ -13,5 +13,28 @@ module.exports = {
   standard: {
     bin: 'standard/bin/cmd.js',
     api: 'standard'
+  },
+  rollup: {
+    bin: 'rollup/bin/rollup',
+    api: [
+      'rollup',
+      'rollup-pluginutils',
+      'rollup-plugin-node-resolve',
+      'rollup-plugin-commonjs',
+      'rollup-plugin-json',
+      'rollup-plugin-includepaths',
+      'rollup-plugin-babel',
+      'rollup-plugin-uglify',
+      'rollup-plugin-vue',
+      'rollup-plugin-re',
+    ]
+  },
+  uglifyjs: {
+    bin: 'uglify-es/bin/uglifyjs',
+    api: 'uglify-es'
+  },
+  "node-sass": {
+    bin: 'node-sass/bin/node-sass',
+    api: 'node-sass'
   }
 }
