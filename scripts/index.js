@@ -34,20 +34,13 @@ function prepare () {
   ])
 }
 
-function build () {
-  return Promise.all([
-    removeNodeAddins()
-      .then(buildPkgs),
-  ])
-}
-
 /*
 PKG_CACHE_PATH 缓存目录 ~/.pkg-cache (ci里面使用)
 PKG_NODE_VERSION node版本 8
 PKG_ONLY 平台选择 win mac linux
  */
 prepare()
-.then(build)
+.then(buildPkgs)
 .catch(err => {
   console.error('xxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   console.error(err)
