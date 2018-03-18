@@ -11,6 +11,6 @@ script:
   - export PKG_CACHE_PATH=`pwd`/cache
   - npm run build
   - echo $NPM_AUTH_TOKEN>~/.npmrc
-  - npm publish platform/win 
-  - npm publish platform/mac
-  - npm publish platform/linux
+  - npm publish platform/win --force
+  - npm publish platform/mac --force
+  - npm publish platform/linux --force

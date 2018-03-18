@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "standard sav tools",
   "bin": {
     "nyc": "bin/nyc",
@@ -32,12 +32,16 @@
     "ava": "^0.25.0",
     "babel-eslint": "^8.2.2",
     "babel-register": "^6.26.0",
+    "browser-env": "^3.2.5",
     "chai": "^4.1.2",
     "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-vue": "^4.3.0",
     "node-sass": "^4.7.2",
     "nyc": "^11.6.0",
     "pkg": "^4.3.0",
+    "require-extension-hooks": "^0.3.2",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^1.0.0",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
@@ -50,6 +54,7 @@
     "rollup-pluginutils": "^2.0.1",
     "standard": "^11.0.1",
     "standard-sass": "^1.0.8",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.9",
+    "vue-test-utils": "^1.0.0-beta.11"
   }
 }

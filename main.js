@@ -67,10 +67,18 @@ Module._resolveFilename = function (file) {
   return ancestor._resolveFilename.apply(this, args)
 }
 
+// nyc ava test
 require.resolve('babel-register')
 require.resolve('chai')
 require.resolve('babel-eslint')
 require.resolve('babel-core')
+
+// ava vue test
+require.resolve('require-extension-hooks')
+require.resolve('require-extension-hooks-vue')
+require.resolve('require-extension-hooks-babel')
+require.resolve('browser-env')
+require.resolve('vue-test-utils')
 
 require('./apps-resolve.js')
 
