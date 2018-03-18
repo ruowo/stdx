@@ -8,4 +8,15 @@ nyc
 ava
 standard
 standard-sass
+rollup
+uglifyjs
+node-sass
+```
+
+
+### 附加工具(TODO)
+
+```
+which
+uuid
 ```

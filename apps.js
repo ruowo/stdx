@@ -12,7 +12,10 @@ module.exports = {
   },
   standard: {
     bin: 'standard/bin/cmd.js',
-    api: 'standard'
+    api: [
+      'standard',
+      'eslint-plugin-vue'
+    ]
   },
   rollup: {
     bin: 'rollup/bin/rollup',
@@ -36,5 +39,8 @@ module.exports = {
   "node-sass": {
     bin: 'node-sass/bin/node-sass',
     api: 'node-sass'
+  },
+  'standard-sass': {
+    bin: 'standard-sass/dist/standard-sass.js'
   }
 }

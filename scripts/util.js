@@ -184,6 +184,34 @@ function plog (func, text) {
   }
 }
 
+function readDir (dir, opts) {
+  return new Promise((resolve, reject) => {
+    fs.readdir(dir, opts, (err, dirs) => {
+      if (err) {
+        return reject(err)
+      }
+      if (opts.exclude) {
+        let exclude = opts.exclude
+        if (!Array.isArray(opts.exclude)) {
+          exclude = exclude.split('|')
+        }
+        dirs = dirs.filter(it => !exclude.some(t => it.indexOf(t) !== -1))
+      }
+      let ret
+      if (opts.join || opts.fullPath) {
+        ret = dirs.map(it => opts.fullPath ? path.resolve(dir, it) : path.join(dir, it))
+        if (opts.map) {
+          resolve(ret.reduce((dist, path, id) => {
+            dist[dirs[id]] = path
+            return dist
+          }, {}))
+        }
+      }
+      resolve(dirs)
+    })
+  })
+}
+
 module.exports = {
   readTextFile,
   readTextFileSync,
@@ -201,5 +229,6 @@ module.exports = {
   getCacheList,
   addToCacheList,
   plog,
+  readDir,
   defaultTarget: targets[platform]
 }

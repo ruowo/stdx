@@ -8,9 +8,11 @@
     "standard": "bin/standard",
     "rollup": "bin/rollup",
     "uglifyjs": "bin/uglifyjs",
-    "node-sass": "bin/node-sass"
+    "node-sass": "bin/node-sass",
+    "standard-sass": "bin/standard-sass"
   },
   "scripts": {
+    "list": "node ./scripts/list.js",
     "build": "node ./scripts/index.js"
   },
   "repository": {
@@ -31,6 +33,7 @@
     "babel-eslint": "^8.2.2",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "eslint-plugin-vue": "^4.3.0",
     "node-sass": "^4.7.2",
     "nyc": "^11.6.0",
     "pkg": "^4.3.0",
@@ -45,6 +48,7 @@
     "rollup-plugin-vue": "^3.0.0",
     "rollup-pluginutils": "^2.0.1",
     "standard": "^11.0.1",
+    "standard-sass": "^1.0.8",
     "uglify-es": "^3.3.9"
   }
 }
