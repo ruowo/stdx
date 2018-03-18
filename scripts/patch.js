@@ -24,9 +24,9 @@ function patchPkg () {
       data = data.substr(0, pos) + data.substr(pos2 + find2.length, data.length)
       // 修改 runMain
       find = `Module.runMain = function () {
-      Module._load(ENTRYPOINT, null, true);
-      process._tickCallback();
-    };`
+    Module._load(ENTRYPOINT, null, true);
+    process._tickCallback();
+  };`
       pos = data.indexOf(find)
       if (pos === -1) {
         throw new Error('can not match patch runMain')
