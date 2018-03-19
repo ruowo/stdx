@@ -66,7 +66,7 @@ function copyPlatformResources () {
       copyFile(path.join(__dirname, `../README.md`),
         path.join(dist, `README.md`)),
       readTextFile(path.join(__dirname, `../exec.js`)).then(res => {
-        let text = res.replace('platform/${' + 'platform}/', '')
+        let text = res.replace(/platform\/\w+\//g, '')
         return writeFile(path.join(dist, `exec.js`), text)
       }),
     ])

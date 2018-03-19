@@ -1,22 +1,11 @@
-var path = require('path')
-var childProcess = require('child_process')
-var platform = process.platform
-switch (process.platform) {
-  case 'win32':
-    platform = 'win'
-    break
-  case 'darwin':
-    platform = 'mac'
-    break
-  default:
-    platform = 'linux'
-    break
-}
-var cmd = path.resolve(__dirname, `./platform/${platform}/stdx${process.platform === 'win32' ? '.exe' : ''}`)
 
 module.exports = function (args) {
-  var ps = childProcess.spawn(cmd, args, { stdio: 'inherit' })
-  ps.on('close', (code) => {
+  require('child_process').spawn(require('path').resolve(__dirname, ({
+    win32: 'platform/win/stdx.exe',
+    darwin: 'platform/mac/stdx',
+  })[process.platform] || 'platform/linux/stdx'), 
+    args, { stdio: 'inherit' }
+  ).on('close', function (code) {
     process.exit(code)
   })
 }
