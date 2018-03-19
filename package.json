@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "standard sav tools",
   "bin": {
     "nyc": "bin/nyc",

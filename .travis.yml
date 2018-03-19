@@ -2,7 +2,6 @@ language: node_js
 node_js:
 - 8.10
 deploy:
-  provider: npm
   email: 86287344@qq.com
   skip_cleanup: true
   api_key:
@@ -10,7 +9,3 @@ deploy:
 script:
   - export PKG_CACHE_PATH=`pwd`/cache
   - npm run build
-  - echo $NPM_AUTH_TOKEN>~/.npmrc
-  - npm publish platform/win --force
-  - npm publish platform/mac --force
-  - npm publish platform/linux --force
