@@ -22,7 +22,7 @@ const {
 
 function prepare () {
   return Promise.all([
-    resetNodeAddins(),
+    // resetNodeAddins(),
     createAppResolve(),
     patchPkg(), 
     createBinCommands(),
