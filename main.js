@@ -67,6 +67,8 @@ Module._resolveFilename = function (file) {
   return ancestor._resolveFilename.apply(this, args)
 }
 
+if (0) {
+
 // nyc ava test
 require.resolve('babel-register')
 require.resolve('chai')
@@ -81,6 +83,8 @@ require.resolve('browser-env')
 require.resolve('vue-test-utils')
 
 require('./apps-resolve.js')
+
+}
 
 if (entrypoint) {
   Module._load(entrypoint, null, true)

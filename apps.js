@@ -37,11 +37,29 @@ module.exports = {
     bin: 'uglify-es/bin/uglifyjs',
     api: 'uglify-es'
   },
+  lessc: {
+    bin: 'less/bin/lessc'
+  },
+  stylus: {
+    bin: 'stylus/bin/stylus'
+  },
   "node-sass": {
     bin: 'node-sass/bin/node-sass',
     api: 'node-sass'
   },
   'standard-sass': {
     bin: 'standard-sass/dist/standard-sass.js'
+  },
+  'babel': {
+    bin: "babel-cli/bin/babel.js"
+  },
+  'babel-node': {
+    bin: "babel-cli/bin/babel-node.js"
+  },
+  'which': {
+    bin: 'which/bin/which'
+  },
+  'uuid': {
+    bin: 'uuid/bin/uuid'
   }
 }

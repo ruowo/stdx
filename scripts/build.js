@@ -4,7 +4,7 @@ let {targets, plog, exist, copyFile, removeFile, getCacheList, readTextFile, wri
 const childProcess = require('child_process')
 let packageFile = require('../package.json')
 const packageJSON = strip(JSON.parse(JSON.stringify(packageFile)))
-const apps = Object.keys(require('../apps.js'))
+const apps = ['stdx'].concat(Object.keys(require('../apps.js')))
 
 function strip (pkg) {
   ['scripts', 'devDependencies', 'dependencies', 'bin'].forEach(it => delete pkg[it])
@@ -47,6 +47,10 @@ function createBinCommands () {
     packageFile.bin = bin
     return Promise.all(apps.map(it => {
       let data = buf.replace('APP', it)
+      if (it === 'stdx') {
+        data = `#!/usr/bin/env node
+require('../exec.js')(process.argv.slice(2))`
+      }
       return Promise.all([
         writeFile(path.join(__dirname, `../bin/${it}`), data),
         writeFile(path.join(__dirname, `../platform/win/bin/${it}`), data),
