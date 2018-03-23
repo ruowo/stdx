@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "standard sav tools",
   "bin": {
     "stdx": "bin/stdx",
