@@ -80,7 +80,7 @@ require.resolve('require-extension-hooks')
 require.resolve('require-extension-hooks-vue')
 require.resolve('require-extension-hooks-babel')
 require.resolve('browser-env')
-require.resolve('vue-test-utils')
+require.resolve('@vue/test-utils')
 
 require('./apps-resolve.js')
 

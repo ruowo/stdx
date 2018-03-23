@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "standard sav tools",
   "bin": {
     "stdx": "bin/stdx",
@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/std-tools/stdx#readme",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.12",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
@@ -62,7 +63,6 @@
     "rollup-pluginutils": "^2.0.1",
     "standard": "^11.0.1",
     "standard-sass": "^1.0.8",
-    "uglify-es": "^3.3.9",
-    "vue-test-utils": "^1.0.0-beta.11"
+    "uglify-es": "^3.3.9"
   }
 }
