@@ -7,7 +7,8 @@ function downloadNodeSassAddions () {
     win32: 'win',
     darwin: 'mac'
   }
-  return Promise.all(['win32', 'darwin', 'linux', 'freebsd', 'linux_musl'].map(it => {
+  // , 'freebsd', 'linux_musl'
+  return Promise.all(['win32', 'darwin', 'linux'].map(it => {
     let dir = dirMap[it] || 'linux'
     let binPath = require('node-sass/lib/extensions').getBinaryPath()
     // \stdx\node_modules\node-sass\vendor\win32-x64-57\binding.node
@@ -15,7 +16,7 @@ function downloadNodeSassAddions () {
     // ..\platform\$DIR$\node-sass\vendor\win32-x64-57\binding.node
     binPath = binPath.replace(`${process.platform}-`, '$SYSTEM$')
     // ..\platform\$DIR$\node-sass\vendor\$SYSTEM$-x64-57\binding.node
-    return spawn(path.join(__dirname, 'pnode/pnode'), 
+    return spawn(path.join(__dirname, 'pnode', 'pnode-' + process.platform), 
       [require.resolve('node-sass/scripts/install')],
       {
         env: {

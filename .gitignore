@@ -63,5 +63,5 @@ typings/
 /platform/win
 /bin
 /cache
-/scripts/pnode/pnode.exe
+/scripts/pnode/pnode-*
 /scripts/pnode/pnode

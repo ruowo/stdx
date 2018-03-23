@@ -130,6 +130,14 @@ function patchNodeSass () {
       throw new Error('can not patch node-sass install')
     }
     text = text.substr(0, pos + find.length) + append + text.substr(pos + find.length, text.length)
+    
+    find = 'function getPlatformVariant() {'
+    pos = text.indexOf(find)
+    if (pos === -1) {
+      throw new Error('can not patch node-sass with getPlatformVariant')
+    }
+    text = text.substr(0, pos + find.length) + `return '';` + text.substr(pos + find.length, text.length)
+
     return writeFile(file, text).then(plog('patchNodeSass', 'done.'))
   })
 }
