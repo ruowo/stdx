@@ -66,6 +66,10 @@ stdx ./test.js
   - [rollup-plugin-uglify](https://npmjs.org/package/rollup-plugin-uglify)
   - [rollup-plugin-vue](https://npmjs.org/package/rollup-plugin-vue)
   - [rollup-plugin-re](https://npmjs.org/package/rollup-plugin-re)
+  - [rollup-plugin-serve](https://npmjs.org/package/rollup-plugin-serve)
+  - [rollup-plugin-liveload](https://npmjs.org/package/rollup-plugin-liveload)
+  - [rollup-plugin-node-globals](https://npmjs.org/package/rollup-plugin-node-globals)
+  - [rollup-plugin-alias](https://npmjs.org/package/rollup-plugin-alias)
 - uglifyjs [压缩必备](https://npmjs.org/package/uglifyjs)
 - node-sass [sass样式预处理](https://npmjs.org/package/chai)
 - less [less样式预处理](https://npmjs.org/package/less)
@@ -95,6 +99,7 @@ stdx ./test.js
 - ts [typescript](https://npmjs.org/package/typescript)
 - which [命令查找](https://npmjs.org/package/which)
 - uuid [UUID生成器](https://npmjs.org/package/uuid)
+- watch-cli [目录监听](https://npmjs.org/package/watch-cli)
 
 ### 还需要什么呢?
 

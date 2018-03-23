@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "description": "standard sav tools",
   "bin": {
     "stdx": "bin/stdx",
@@ -16,7 +16,8 @@
     "babel": "bin/babel",
     "babel-node": "bin/babel-node",
     "which": "bin/which",
-    "uuid": "bin/uuid"
+    "uuid": "bin/uuid",
+    "watch": "bin/watch"
   },
   "scripts": {
     "list": "node ./scripts/list.js",
@@ -52,17 +53,22 @@
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.0.0",
     "rollup": "^0.57.1",
+    "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-includepaths": "^0.2.2",
     "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-globals": "^1.2.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-re": "^1.0.6",
+    "rollup-plugin-serve": "^0.4.2",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
     "rollup-pluginutils": "^2.0.1",
     "standard": "^11.0.1",
     "standard-sass": "^1.0.8",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.9",
+    "watch-cli": "^0.2.3"
   }
 }

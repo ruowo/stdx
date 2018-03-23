@@ -31,6 +31,10 @@ module.exports = {
       'rollup-plugin-uglify',
       'rollup-plugin-vue',
       'rollup-plugin-re',
+      'rollup-plugin-serve',
+      'rollup-plugin-liveload',
+      'rollup-plugin-node-globals',
+      'rollup-plugin-alias',
     ]
   },
   uglifyjs: {
@@ -61,5 +65,8 @@ module.exports = {
   },
   'uuid': {
     bin: 'uuid/bin/uuid'
+  },
+  'watch': {
+    bin: 'watch-cli/bin/watch'
   }
 }
