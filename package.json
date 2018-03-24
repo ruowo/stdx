@@ -27,6 +27,10 @@
     "list": "node ./scripts/list.js",
     "install": "node ./scripts/install.js",
     "win": "cross-env PKG_ONLY=win node ./scripts/index.js && cd platform/win && npm i -g .",
+    "pub-win": "cd platform/win && npm publish --force",
+    "pub-mac": "cd platform/mac && npm publish --force",
+    "pub-linux": "cd platform/linux && npm publish --force",
+    "prepublish": "npm-run-all pub-win pub-mac pub-linux",
     "build": "node ./scripts/index.js"
   },
   "repository": {
