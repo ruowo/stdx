@@ -78,6 +78,12 @@ module.exports = {
   'npm-run-all': {
     bin: 'npm-run-all/bin/npm-run-all/index.js'
   },
+  'run-p': {
+    bin: 'npm-run-all/bin/run-p/index.js'
+  },
+  'run-s': {
+    bin: 'npm-run-all/bin/run-s/index.js'
+  },
   'hs': {
     bin: 'http-server/bin/http-server'
   }
