@@ -95,6 +95,9 @@ function spawn (bin, args, opts) {
   return new Promise((resolve, reject) => {
     try {
       let distOpts = Object.assign({ stdio: 'inherit' }, opts)
+      if (!distOpts.stdio) {
+        delete distOpts.stdio
+      }
       let ps = childProcess.spawn(bin, args, distOpts)
       let obuf = []
       let ebuf = []
@@ -122,12 +125,15 @@ let nodeVersion = process.env.PKG_NODE_VERSION || 8
 
 let targets = {
   win: {
+    platform: 'win32',
     target: `node${nodeVersion}-win-x64`
   },
   mac: {
+    platform: 'darwin',
     target: `node${nodeVersion}-macos-x64`
   },
   linux: {
+    platform: 'linux',
     target: `node${nodeVersion}-linux-x64`
   }
 }

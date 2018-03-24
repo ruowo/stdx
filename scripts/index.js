@@ -17,6 +17,7 @@ const {
 } = require('./patch.js')
 
 const {
+  copyUws, // // 复制uws插件包
   downloadNodeSassAddions // 下载node-sass各个平台的插件包
 } = require('./fetch.js')
 
@@ -30,7 +31,10 @@ function prepare () {
     Promise.all([
       buildPNode(),
       patchNodeSass(),
-    ]).then(downloadNodeSassAddions)
+    ]).then(() => Promise.all([
+      copyUws(),
+      downloadNodeSassAddions()
+    ]))
   ])
 }
 

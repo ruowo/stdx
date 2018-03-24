@@ -49,6 +49,8 @@ stdx ./test.js
 
 ### 框架
 
+- [express 4.16](https://npmjs.org/package/express)
+- [socket.io 2.0](https://npmjs.org/package/express)
 - vue [vue 2.5](https://npmjs.org/package/vue)
   - [vue-server-renderer](https://npmjs.org/package/vue-server-renderer)
   - [vue-template-compiler](https://npmjs.org/package/vue-template-compiler)
@@ -98,6 +100,7 @@ stdx ./test.js
 
 - lodash
 - json5
+- fs-extra
 - is-*
 
 ### 附加工具

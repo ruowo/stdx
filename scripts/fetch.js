@@ -1,6 +1,7 @@
-const {copyFile, spawn, nodeVersion, plog} = require('./util.js')
+const {targets, copyFile, spawn, nodeVersion, plog} = require('./util.js')
 const path = require('path')
 const fs = require('fs')
+const fse = require('fs-extra')
 
 function downloadNodeSassAddions () {
   let dirMap = {
@@ -28,6 +29,21 @@ function downloadNodeSassAddions () {
   })).then(plog('downloadNodeSassAddions', 'done.'))
 }
 
+function copyUws () {
+  return spawn(path.join(__dirname, 'pnode', 'pnode-' + process.platform), 
+    ['-m'], {stdio: null}
+  ).then((m) => Promise.all(Object.keys(targets).map(it => {
+    let src = require.resolve(`uws/uws_${targets[it].platform}_${m.stdout.trim()}.node`)
+    let dest = path.resolve(__dirname, `../platform/${it}/uws`)
+    return fse.ensureDir(dest).then(() => {
+      let dist = path.join(dest, path.basename(src))
+      return fse.copyFile(src, dist)
+        .then(plog('copy uws', dist))
+    })
+  }))).then(plog('copyUws', 'done.'))
+}
+
 module.exports = {
   downloadNodeSassAddions, // 下载node-sass各个平台的插件包
+  copyUws, // 复制uws插件包
 }
