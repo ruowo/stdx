@@ -50,7 +50,8 @@ stdx ./test.js
 ### 框架
 
 - [express 4.16](https://npmjs.org/package/express)
-- [socket.io 2.0](https://npmjs.org/package/express)
+  - [body-parser](https://npmjs.org/package/body-parser)
+- [socket.io 2.0](https://npmjs.org/package/socket.io)
 - vue [vue 2.5](https://npmjs.org/package/vue)
   - [vue-server-renderer](https://npmjs.org/package/vue-server-renderer)
   - [vue-template-compiler](https://npmjs.org/package/vue-template-compiler)
@@ -76,7 +77,7 @@ stdx ./test.js
   - [rollup-plugin-re](https://npmjs.org/package/rollup-plugin-re)
   - [rollup-plugin-serve](https://npmjs.org/package/rollup-plugin-serve)
   - [rollup-plugin-liveload](https://npmjs.org/package/rollup-plugin-liveload)
-  - [rollup-plugin-node-globals](https://npmjs.org/package/rollup-plugin-node-globals)
+  - [rollup-plugin-node-globals 未测试](https://npmjs.org/package/rollup-plugin-node-globals)
   - [rollup-plugin-alias](https://npmjs.org/package/rollup-plugin-alias)
 - uglifyjs [压缩必备](https://npmjs.org/package/uglifyjs)
 - node-sass [sass样式预处理](https://npmjs.org/package/chai)
@@ -111,6 +112,7 @@ stdx ./test.js
 - watch-cli [目录监听](https://npmjs.org/package/watch-cli)
 - cross-env [环境设置](https://npmjs.org/package/cross-env)
 - npm-run-all [并行命令](https://npmjs.org/package/npm-run-all)
+- hs [http-server](https://npmjs.org/package/http-server)
 
 ### 还需要什么呢?
 

@@ -32,7 +32,7 @@ module.exports = {
       'rollup-plugin-vue',
       'rollup-plugin-re',
       'rollup-plugin-serve',
-      'rollup-plugin-liveload',
+      'rollup-plugin-livereload',
       'rollup-plugin-node-globals',
       'rollup-plugin-alias',
     ]
@@ -70,12 +70,15 @@ module.exports = {
     bin: 'watch-cli/bin/watch'
   },
   'cross-env': {
-    bin: 'cross-env/bin/cross-env.js'
+    bin: 'cross-env/dist/bin/cross-env.js'
   },
   'cross-env-shell': {
-    bin: 'cross-env/bin/cross-env-shell.js'
+    bin: 'cross-env/dist/bin/cross-env-shell.js'
   },
   'npm-run-all': {
     bin: 'npm-run-all/bin/npm-run-all/index.js'
+  },
+  'hs': {
+    bin: 'http-server/bin/http-server'
   }
 }

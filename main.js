@@ -87,6 +87,11 @@ require.resolve('require-extension-hooks-babel')
 require.resolve('browser-env')
 require.resolve('@vue/test-utils')
 
+// express
+require.resolve('express')
+require.resolve('socket.io')
+require.resolve('es6-promise')
+
 require('./apps-resolve.js')
 
 }
