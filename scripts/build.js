@@ -44,7 +44,6 @@ function createPlatformPackageJson (platform) {
 
 function createBinCommands () {
   return readTextFile(path.join(__dirname, 'command-template')).then((buf) => {
-    packageFile.bin = bin
     return Promise.all(apps.map(it => {
       let data = buf.replace('APP', it)
       if (it === 'stdx') {
@@ -57,9 +56,7 @@ require('../exec.js')(process.argv.slice(2))`
         writeFile(path.join(__dirname, `../platform/mac/bin/${it}`), data),
         writeFile(path.join(__dirname, `../platform/linux/bin/${it}`), data)
       ])
-    })).then(() => {
-      return writeFile(path.join(__dirname, '../package.json'), JSON.stringify(packageFile, null, 2))
-    })
+    }))
   }).then(plog('createBinCommands', 'done.'))
 }
 

@@ -13,7 +13,7 @@ exist(path.join(__dirname, '../platform'))
       }
       let pkg = pkgMap[process.platform] || 'linux'
       return spawn(npm, [
-        'install' , '--production', `${name}-${pkg}@${version}`
+        'install' , '--production', `${name}-${pkg}@${version}`, '--verbose'
       ])
     }
   })
