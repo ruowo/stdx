@@ -126,14 +126,20 @@ let nodeVersion = process.env.PKG_NODE_VERSION || 8
 let targets = {
   win: {
     platform: 'win32',
+    cacheFile: 'stdx-win.exe',
+    distFile: 'stdx.exe',
     target: `node${nodeVersion}-win-x64`
   },
   mac: {
     platform: 'darwin',
+    cacheFile: 'stdx-macos',
+    distFile: 'stdx',
     target: `node${nodeVersion}-macos-x64`
   },
   linux: {
     platform: 'linux',
+    cacheFile: 'stdx-linux',
+    distFile: 'stdx',
     target: `node${nodeVersion}-linux-x64`
   }
 }
@@ -149,17 +155,6 @@ switch (process.platform) {
   default:
     platform = 'linux'
     break
-}
-
-let defaultTarget = targets[platform]
-
-if (process.env.PKG_ONLY) {
-  let pkg = process.env.PKG_ONLY
-  for (let name in targets) {
-    if (name !== pkg) {
-      delete targets[name]
-    }
-  }
 }
 
 function getCacheList () {
@@ -237,6 +232,5 @@ module.exports = {
   getCacheList,
   addToCacheList,
   plog,
-  readDir,
-  defaultTarget
+  readDir
 }

@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "standard sav tools",
   "bin": {
     "stdx": "bin/stdx",
@@ -21,12 +21,13 @@
     "cross-env": "bin/cross-env",
     "cross-env-shell": "bin/cross-env-shell",
     "npm-run-all": "bin/npm-run-all",
+    "run-p": "bin/run-p",
+    "run-s": "bin/run-s",
     "hs": "bin/hs"
   },
   "scripts": {
     "list": "node ./scripts/list.js",
     "install": "node ./scripts/install.js",
-    "win": "cross-env PKG_ONLY=win node ./scripts/index.js && cd platform/win && npm i -g .",
     "pub-win": "cd platform/win && npm publish --force",
     "pub-mac": "cd platform/mac && npm publish --force",
     "pub-linux": "cd platform/linux && npm publish --force",

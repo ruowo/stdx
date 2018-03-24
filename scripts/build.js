@@ -84,7 +84,6 @@ const platformMap = {
 }
 
 function buildPkg (platform, config) {
-  // 为了避开不必要的node扩展, 这个方法不能并行
   return Promise.resolve().then(plog('buildPkg', `${platform}-node${nodeVersion} start`))
     .then(() => pack(platform, config))
     .then(plog('buildPkg', `${platform}-node${nodeVersion} done.`))
@@ -92,9 +91,34 @@ function buildPkg (platform, config) {
 
 function buildPkgs () {
   // 已经串行下载过了, 这里可以并行了
-  return Promise.all(Object.keys(targets)
-    .map((it) => buildPkg(it, targets[it])))
-    .then(plog('buildPkgs', 'done.'))
+  let cache = path.resolve('./cache')
+  let dest = path.resolve('./platform')
+  let target = Object.keys(targets).map(it => targets[it].target).join(',')
+  return new Promise((resolve, reject) => {
+    let args = [
+      '-t', target,
+      '--out-path', cache,
+      '--config', 'pkg.json', 'main.js']
+    let ps = childProcess.spawn(pkg, args , { stdio: 'inherit' })
+    ps.on('close', (code) => {
+      if (code) {
+        return reject(new Error(`pkg error: ${code}`))
+      }
+      resolve()
+    })
+  }).then(() => {
+    return Promise.all(Object.keys(targets)
+      .map((it) => {
+        return Promise.all([
+          createPlatformPackageJson(it),
+          copyFile(path.join(cache, targets[it].cacheFile),
+            path.join(dest, it, targets[it].distFile))
+        ]).then(plog('buildPkg', `${it} done.`))
+      }))
+  }).then(plog('buildPkgs', 'done.'))
+  // return Promise.all(Object.keys(targets)
+  //   .map((it) => buildPkg(it, targets[it])))
+  //   .then(plog('buildPkgs', 'done.'))
   // return Object.keys(targets).reduce((ret, it) => {
   //   return ret.then(() => {
   //     return buildPkg(it, targets[it])
