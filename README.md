@@ -47,6 +47,12 @@ stdx ./test.js
 
 # 集成环境
 
+### 框架
+
+- vue [vue 2.5](https://npmjs.org/package/vue)
+  - [vue-server-renderer](https://npmjs.org/package/vue-server-renderer)
+  - [vue-template-compiler](https://npmjs.org/package/vue-template-compiler)
+
 ### 测试工具
 
 - nyc [代码覆盖率检查](https://npmjs.org/package/nyc)
@@ -100,6 +106,8 @@ stdx ./test.js
 - which [命令查找](https://npmjs.org/package/which)
 - uuid [UUID生成器](https://npmjs.org/package/uuid)
 - watch-cli [目录监听](https://npmjs.org/package/watch-cli)
+- cross-env [环境设置](https://npmjs.org/package/cross-env)
+- npm-run-all [并行命令](https://npmjs.org/package/npm-run-all)
 
 ### 还需要什么呢?
 

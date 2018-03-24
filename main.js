@@ -75,6 +75,11 @@ require.resolve('chai')
 require.resolve('babel-eslint')
 require.resolve('babel-core')
 
+// vue
+require.resolve('vue')
+require.resolve('vue-template-compiler')
+require.resolve('vue-server-renderer')
+
 // ava vue test
 require.resolve('require-extension-hooks')
 require.resolve('require-extension-hooks-vue')

@@ -68,5 +68,14 @@ module.exports = {
   },
   'watch': {
     bin: 'watch-cli/bin/watch'
+  },
+  'cross-env': {
+    bin: 'cross-env/bin/cross-env.js'
+  },
+  'cross-env-shell': {
+    bin: 'cross-env/bin/cross-env-shell.js'
+  },
+  'npm-run-all': {
+    bin: 'npm-run-all/bin/npm-run-all/index.js'
   }
 }
