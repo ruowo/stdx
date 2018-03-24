@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "standard sav tools",
   "bin": {
     "stdx": "bin/stdx",
@@ -25,6 +25,7 @@
   },
   "scripts": {
     "list": "node ./scripts/list.js",
+    "install": "node ./scripts/install.js",
     "win": "cross-env PKG_ONLY=win node ./scripts/index.js && cd platform/win && npm i -g .",
     "build": "node ./scripts/index.js"
   },
