@@ -92,7 +92,8 @@ function buildPkg (platform, config) {
 
 function buildPkgs () {
   // 已经串行下载过了, 这里可以并行了
-  return Object.keys(targets).map((it) => buildPkg(it, targets[it]))
+  return Promise.all(Object.keys(targets)
+    .map((it) => buildPkg(it, targets[it])))
     .then(plog('buildPkgs', 'done.'))
   // return Object.keys(targets).reduce((ret, it) => {
   //   return ret.then(() => {
