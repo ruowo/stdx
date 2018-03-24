@@ -91,12 +91,14 @@ function buildPkg (platform, config) {
 }
 
 function buildPkgs () {
-  // 串行
-  return Object.keys(targets).reduce((ret, it) => {
-    return ret.then(() => {
-      return buildPkg(it, targets[it])
-    })
-  }, Promise.resolve()).then(plog('buildPkgs', 'done.'))
+  // 已经串行下载过了, 这里可以并行了
+  return Object.keys(targets).map((it) => buildPkg(it, targets[it]))
+    .then(plog('buildPkgs', 'done.'))
+  // return Object.keys(targets).reduce((ret, it) => {
+  //   return ret.then(() => {
+  //     return buildPkg(it, targets[it])
+  //   })
+  // }, Promise.resolve()).then(plog('buildPkgs', 'done.'))
 }
 
 function removeNodeAddins () {
