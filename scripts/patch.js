@@ -32,6 +32,17 @@ function patchPkg () {
         throw new Error('can not match patch runMain')
       }
       data = data.substr(0, pos) + repace + data.substr(pos + find.length, data.length)
+      
+      find = `filename = ancestor._resolveFilename.apply(this, arguments);
+        flagWasOn = true;`
+      pos = data.indexOf(find)
+      if (pos === -1) {
+        throw new Error('can not match patch _resolveFilename')
+      }
+      data = data.substr(0, pos) + `var args = arguments;
+        args[0] = mapBin(args[0])
+        filename = ancestor._resolveFilename.apply(this, args);
+        flagWasOn = true;` + data.substr(pos + find.length, data.length)
 
       // 写入文件
       return writeFile(bootstrap, data).then(plog('patchPkg', 'done'))
@@ -41,29 +52,40 @@ function patchPkg () {
 }
 
 const repace = `
-  var once = false
-  Module.runMain = function () {
-    if (once) {
-      let main = process.argv[1]
-      let arr = ['ava']
-      let map = ['ava/cli']
-      if (main) {
-        for (let i=0; i< arr.length; ++i) {
-          if (main.indexOf(arr[i]) === main.length - arr[i].length) {
-            Module._load(process.env.ENTRYMODULE + '/' + map[i], null, true);
-            process._tickCallback();
-            return
-          }
+  var binMaps = null
+    var path = require('path')
+    function mapBin (bin) {
+      if (!binMaps) {
+        binMaps = JSON.parse(process.env.ENTRYAPPS)
+        for (var name in binMaps) {
+          binMaps[name] = path.normalize(process.env.ENTRYMODULE + '/' + binMaps[name])
         }
       }
-      Module._load(process.argv[1], null, true);
-      process._tickCallback();
-      return
+      return binMaps[bin] || bin
     }
-    once = true
-    Module._load(ENTRYPOINT, null, true);
-    process._tickCallback();
-  };
+    var once = false
+    Module.runMain = function () {
+      if (once) {
+        let main = process.argv[1]
+        let arr = ['ava']
+        let map = ['ava/cli']
+        if (main) {
+          for (let i=0; i< arr.length; ++i) {
+            if (main.indexOf(arr[i]) === main.length - arr[i].length) {
+              Module._load(process.env.ENTRYMODULE + '/' + map[i], null, true);
+              process._tickCallback();
+              return
+            }
+          }
+        }
+        Module._load(mapBin(process.argv[1]), null, true);
+        process._tickCallback();
+        return
+      }
+      once = true
+      Module._load(ENTRYPOINT, null, true);
+      process._tickCallback();
+    };
 `
 
 const inject = `

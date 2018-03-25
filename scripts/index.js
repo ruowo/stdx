@@ -41,6 +41,7 @@ function prepare () {
 /*
 PKG_CACHE_PATH 缓存目录 ~/.pkg-cache (ci里面使用)
 PKG_NODE_VERSION node版本 8
+PKG_ONLY 只构建某个版本 win mac linux
  */
 prepare()
 .then(buildPkgs)

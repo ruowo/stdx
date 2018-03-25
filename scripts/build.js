@@ -90,7 +90,11 @@ function buildPkgs () {
   // 已经串行下载过了, 这里可以并行了
   let cache = path.resolve('./cache')
   let dest = path.resolve('./platform')
+  let pkgType = process.env.PKG_ONLY
   let target = Object.keys(targets).map(it => targets[it].target).join(',')
+  if (pkgType) {
+    target = targets[pkgType].target
+  }
   return new Promise((resolve, reject) => {
     let args = [
       '-t', target,
@@ -105,10 +109,18 @@ function buildPkgs () {
     })
   }).then(() => {
     return Promise.all(Object.keys(targets)
+      .filter(it => pkgType ? (it === pkgType) : true)
       .map((it) => {
+        let cacheFile = targets[it].cacheFile
+        if (pkgType) {
+          cacheFile = cacheFile
+            .replace('-macos', '')
+            .replace('-linux', '')
+            .replace('-win', '')
+        }
         return Promise.all([
           createPlatformPackageJson(it),
-          copyFile(path.join(cache, targets[it].cacheFile),
+          copyFile(path.join(cache, cacheFile),
             path.join(dest, it, targets[it].distFile))
         ]).then(plog('buildPkg', `${it} done.`))
       }))

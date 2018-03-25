@@ -1,32 +1,37 @@
 const path = require('path')
 var Module = require('module')
 
-process.env.ENTRYMODULE = path.join(__dirname, 'node_modules')
-
 const commands = require('./apps.js')
-
 const entries = Object.keys(commands)
+const binMaps = entries.reduce((ret, entry) => {
+  let bin = commands[entry].bin
+  ret[entry] = bin
+  ret[bin] = bin
+  return ret
+}, {})
+
+process.env.ENTRYAPPS = JSON.stringify(binMaps)
+process.env.ENTRYMODULE = path.join(__dirname, 'node_modules')
 
 let args = process.argv.slice(2)
 let app = args[0]
 let entrypoint
 
+process.argv.splice(1, 1)
+
 if (entries.indexOf(app) !== -1) {
-  process.argv.splice(2, 1)
-  entrypoint = commands[app].bin
+  entrypoint = process.argv[1] = binMaps[app]
 } else {
-  process.argv.splice(1, 1)
   entrypoint = process.argv[1]
 }
 
 var ancestor = {}
-
 ancestor.require = Module.prototype.require
 ancestor._resolveFilename = Module._resolveFilename
 ancestor._compile = Module.prototype._compile
 
 // function test (func, file, args) {
-//   if (file.indexOf('vue-template-compiler') !== -1) {
+//   if (file.indexOf('rollup') !== -1) {
 //     console.log(func, file, args, process.cwd())
 //   }
 // }
