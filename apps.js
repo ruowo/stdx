@@ -55,7 +55,19 @@ module.exports = {
     bin: 'standard-sass/dist/standard-sass.js'
   },
   'babel': {
-    bin: "babel-cli/bin/babel.js"
+    bin: "babel-cli/bin/babel.js",
+    api: [
+      'babel-plugin-transform-object-rest-spread',
+      'babel-plugin-transform-decorators-legacy',
+      'babel-plugin-transform-class-properties',
+      'babel-plugin-syntax-function-bind',
+      'babel-preset-env',
+      'babel-preset-react',
+      'babel-preset-stage-0',
+      'babel-preset-stage-1',
+      'babel-preset-stage-2',
+      'babel-preset-stage-3',
+    ]
   },
   'babel-node': {
     bin: "babel-cli/bin/babel-node.js"

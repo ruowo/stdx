@@ -85,9 +85,14 @@ stdx ./test.js
 - stylus [stylus样式预处理](https://npmjs.org/package/stylus)
 - babel [es预处理] (https://npmjs.org/package/babel)
   - [babel-cli](https://npmjs.org/package/babel-cli)
-  - [babel-preset-env](https://npmjs.org/package/babel-preset-env)
   - [babel-register](https://npmjs.org/package/babel-register)
   - [babel-runtime](https://npmjs.org/package/babel-runtime)
+  - [babel-preset-env](https://npmjs.org/package/babel-preset-env)
+  - [babel-preset-react](https://npmjs.org/package/babel-preset-react)
+  - [babel-preset-stage-0](https://npmjs.org/package/babel-preset-stage-0)
+  - [babel-preset-stage-1](https://npmjs.org/package/babel-preset-stage-1)
+  - [babel-preset-stage-2](https://npmjs.org/package/babel-preset-stage-2)
+  - [babel-preset-stage-3](https://npmjs.org/package/babel-preset-stage-3)
 
 ### 代码规范
 
