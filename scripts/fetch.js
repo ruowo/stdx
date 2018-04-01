@@ -45,5 +45,6 @@ function copyUws () {
 
 module.exports = {
   downloadNodeSassAddions, // 下载node-sass各个平台的插件包
-  copyUws, // 复制uws插件包
+  // socket.io@2.1.0 已经不需要了
+  copyUws, // 复制uws插件包 // socket.io@2.0.4 engine.io@3.1.5 uws@9.14.0
 }

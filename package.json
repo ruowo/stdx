@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "standard sav tools",
   "scripts": {
     "list": "node ./scripts/list.js",
@@ -72,7 +72,7 @@
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
     "rollup-pluginutils": "^2.0.1",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.1.0",
     "standard": "^11.0.1",
     "standard-sass": "^1.0.8",
     "uglify-es": "^3.3.9",
