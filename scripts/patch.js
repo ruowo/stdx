@@ -40,7 +40,7 @@ function patchPkg () {
         throw new Error('can not match patch _resolveFilename')
       }
       data = data.substr(0, pos) + `var args = arguments;
-        args[0] = mapBin(args[0])
+        args[0] = mapBin(args[0], true)
         filename = ancestor._resolveFilename.apply(this, args);
         flagWasOn = true;` + data.substr(pos + find.length, data.length)
 
@@ -52,13 +52,20 @@ function patchPkg () {
 }
 
 const repace = `
-  var binMaps = null
+    var binMaps = null
     var path = require('path')
-    function mapBin (bin) {
+    function mapBin (bin, withNode) {
       if (!binMaps) {
         binMaps = JSON.parse(process.env.ENTRYAPPS)
         for (var name in binMaps) {
           binMaps[name] = path.normalize(process.env.ENTRYMODULE + '/' + binMaps[name])
+        }
+      }
+      if (withNode) {
+        if (path.extname(bin, '.node') === '.node') {
+          let index = bin.indexOf('node_modules')
+          let nodeExt = bin.substr(index + 'node_modules'.length + 1, bin.length)
+          return path.resolve(process.execPath, '../' + nodeExt)
         }
       }
       return binMaps[bin] || bin
