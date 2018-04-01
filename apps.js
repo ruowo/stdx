@@ -35,6 +35,8 @@ module.exports = {
       'rollup-plugin-livereload',
       'rollup-plugin-node-globals',
       'rollup-plugin-alias',
+      'rollup-plugin-conditional',
+      'rollup-plugin-multi-entry',
     ]
   },
   uglifyjs: {

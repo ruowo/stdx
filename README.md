@@ -79,6 +79,8 @@ stdx ./test.js
   - [rollup-plugin-liveload](https://npmjs.org/package/rollup-plugin-liveload)
   - [rollup-plugin-node-globals 未测试](https://npmjs.org/package/rollup-plugin-node-globals)
   - [rollup-plugin-alias](https://npmjs.org/package/rollup-plugin-alias)
+  - [rollup-plugin-conditional](https://npmjs.org/package/rollup-plugin-conditional)
+  - [rollup-plugin-multi-entry](https://npmjs.org/package/rollup-plugin-multi-entry)
 - uglifyjs [压缩必备](https://npmjs.org/package/uglifyjs)
 - node-sass [sass样式预处理](https://npmjs.org/package/chai)
 - less [less样式预处理](https://npmjs.org/package/less)

@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 var Module = require('module')
 
 const commands = require('./apps.js')
@@ -69,7 +70,20 @@ Module._resolveFilename = function (file) {
     }
     // test('_resolveFilename', file, args)
   }
-  return ancestor._resolveFilename.apply(this, args)
+  try {
+    return ancestor._resolveFilename.apply(this, args)
+  } catch (err) {
+    // 修正 node扩展
+    if (err.code === 'MODULE_NOT_FOUND') {
+      if (path.extname(file, '.node') === '.node') {
+        let index = file.indexOf('node_modules')
+        let nodeExt = file.substr(index + 'node_modules'.length + 1, file.length)
+        args[0] = path.resolve(process.execPath, '../' + nodeExt)
+        return ancestor._resolveFilename.apply(this, args)
+      }
+    }
+    throw err
+  }
 }
 
 if (0) {
@@ -102,6 +116,11 @@ require('./apps-resolve.js')
 }
 
 if (entrypoint) {
+  try {
+    // 尝试使用本地命令
+    fs.accessSync(entrypoint, fs.constants.R_OK)
+    entrypoint = path.resolve(process.cwd(), entrypoint)
+  } catch (err) {}
   Module._load(entrypoint, null, true)
   process._tickCallback() 
 }
