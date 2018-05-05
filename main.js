@@ -111,6 +111,9 @@ require.resolve('express')
 require.resolve('socket.io')
 require.resolve('es6-promise')
 
+//loadsh
+require.resolve('loadsh/index.js')
+
 require('./apps-resolve.js')
 
 }
