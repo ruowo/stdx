@@ -1,5 +1,10 @@
 # stdx (Node开发工具箱)
 
+[![NPM version](https://badge.fury.io/js/stdx.png)](http://badge.fury.io/js/stdx)
+[![Dependency Status](https://david-dm.org/std-tools/stdx.png)](https://david-dm.org/std-tools/stdx)
+[![devDependency Status](https://david-dm.org/std-tools/stdx/dev-status.png)](https://david-dm.org/std-tools/stdx#info=devDependencies)
+[![Build Status](https://travis-ci.org/std-tools/stdx.svg?branch=master)](https://travis-ci.org/std-tools/stdx)
+
 > 还在为npm安装一堆的devDependencies而苦恼吗?
 
 你需要这样一个工具:
@@ -120,6 +125,7 @@ stdx ./test.js
 - cross-env [环境设置](https://npmjs.org/package/cross-env)
 - npm-run-all [并行命令](https://npmjs.org/package/npm-run-all)
 - hs [http-server](https://npmjs.org/package/http-server)
+- lerna [项目包管理工](https://npmjs.org/package/lerna)
 
 ### 还需要什么呢?
 
