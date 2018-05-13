@@ -173,8 +173,28 @@ function patchNodeSass () {
   })
 }
 
+function patchCodegen() {
+  let file = require.resolve('hullabaloo-config-manager/lib/codegen.js')
+  return readTextFile(file).then(text => {
+    let find = `lines[lines.length - 2] += ','`
+    let sign = '//FIX JSON5 from 0.5 to 1.0'
+    if (text.indexOf(sign) !== -1) {
+      return plog('patchCodegen', 'skip.')()
+    }
+    let pos = text.indexOf(find)
+    if (pos === -1) {
+      throw new Error('patchCodegen can not patch hullabaloo-config-manager/lib/codegen.js')
+    }
+    text = text.replace(find, sign + `
+      lines[lines.length -2].endsWith(',') || (${find}) `)
+    return writeFile(file, text).then(plog('patchCodegen', 'done.'))
+  })
+  // "G:\github\std-tools\stdx\node_modules\hullabaloo-config-manager\lib\codegen.js"
+}
+
 module.exports = {
   createAppResolve, // 创建 apps-resolve.js
   patchPkg, // 给pkg打布丁
-  patchNodeSass, // 需要使node-sass可以下载不同平台的包
+  patchCodegen, // 修正JSON5升级ava失败问题
+  patchNodeSass // 需要使node-sass可以下载不同平台的包
 }
