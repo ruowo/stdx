@@ -100,6 +100,7 @@ require.resolve('babel-core')
 require.resolve('vue')
 require.resolve('vue-template-compiler')
 require.resolve('vue-server-renderer')
+require.resolve('vue-router')
 
 // ava vue test
 require.resolve('require-extension-hooks')
