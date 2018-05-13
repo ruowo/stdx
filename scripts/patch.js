@@ -136,7 +136,9 @@ function createAppResolve() {
   const apps = require('../apps.js')
   return writeFile('./apps-resolve.js', Object.keys(apps).reduce((ret, it) => {
     let app = apps[it]
-    ret.push(`require.resolve("${app.bin}")`)
+    if (app.bin) {
+      ret.push(`require.resolve("${app.bin}")`)
+    }
     if (Array.isArray(app.api)) {
       app.api.forEach(name => ret.push(`require.resolve("${name}")`))
     } else if (app.api) {

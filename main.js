@@ -6,8 +6,10 @@ const commands = require('./apps.js')
 const entries = Object.keys(commands)
 const binMaps = entries.reduce((ret, entry) => {
   let bin = commands[entry].bin
-  ret[entry] = bin
-  ret[bin] = bin
+  if (bin) {
+    ret[entry] = bin
+    ret[bin] = bin
+  }
   return ret
 }, {})
 
