@@ -103,5 +103,8 @@ module.exports = {
   },
   'lerna': {
     bin: 'lerna/bin/lerna.js'
+  },
+  'npm-check': {
+    bin: 'npm-check/bin/cli.js'
   }
 }

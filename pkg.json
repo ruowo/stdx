@@ -4,8 +4,8 @@
     "scripts": [
       "node_modules/nyc/lib/**",
       "node_modules/nyc/bin/**",
-      "node_modules/vue/dist/*.js",
-      "node_modules/vue-router/dist/*.js"
+      "node_modules/vue/dist/vue.js",
+      "node_modules/vue-router/dist/vue-router.js"
     ],
     "assets": [
       "node_modules/standard-sass/dist/**/*.yml"

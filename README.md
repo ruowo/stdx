@@ -126,7 +126,8 @@ stdx ./test.js
 - cross-env [环境设置](https://npmjs.org/package/cross-env)
 - npm-run-all [并行命令](https://npmjs.org/package/npm-run-all)
 - hs [http-server](https://npmjs.org/package/http-server)
-- lerna [项目包管理工](https://npmjs.org/package/lerna)
+- lerna [项目包管理](https://npmjs.org/package/lerna)
+- npm-check [包更新检查](https://npmjs.org/package/npm-check)
 
 ### 还需要什么呢?
 
