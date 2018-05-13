@@ -60,6 +60,7 @@ stdx ./test.js
 - vue [vue 2.5](https://npmjs.org/package/vue)
   - [vue-server-renderer](https://npmjs.org/package/vue-server-renderer)
   - [vue-template-compiler](https://npmjs.org/package/vue-template-compiler)
+  - [vue-router](https://npmjs.org/package/vue-router)
 
 ### 测试工具
 

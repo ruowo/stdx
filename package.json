@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "description": "standard sav tools",
   "scripts": {
     "list": "node ./scripts/list.js",
@@ -78,6 +78,7 @@
     "standard-sass": "^1.0.8",
     "uglify-es": "^3.3.9",
     "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.16",
     "vue-template-compiler": "^2.5.16",
     "watch-cli": "^0.2.3"
