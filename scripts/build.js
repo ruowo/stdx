@@ -4,7 +4,7 @@ let {targets, plog, exist, copyFile, removeFile, getCacheList, readTextFile, wri
 const childProcess = require('child_process')
 let packageFile = require('../package.json')
 const packageJSON = strip(JSON.parse(JSON.stringify(packageFile)))
-const commands = require('./apps.js')
+const commands = require('../apps.js')
 const entries = Object.keys(commands)
 const apps = ['stdx'].concat(entries.filter(it => it.bin))
 
