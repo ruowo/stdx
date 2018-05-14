@@ -6,8 +6,10 @@ const commands = require('./apps.js')
 const entries = Object.keys(commands)
 const binMaps = entries.reduce((ret, entry) => {
   let bin = commands[entry].bin
-  ret[entry] = bin
-  ret[bin] = bin
+  if (bin) {
+    ret[entry] = bin
+    ret[bin] = bin
+  }
   return ret
 }, {})
 
@@ -98,6 +100,7 @@ require.resolve('babel-core')
 require.resolve('vue')
 require.resolve('vue-template-compiler')
 require.resolve('vue-server-renderer')
+require.resolve('vue-router')
 
 // ava vue test
 require.resolve('require-extension-hooks')
@@ -111,8 +114,8 @@ require.resolve('express')
 require.resolve('socket.io')
 require.resolve('es6-promise')
 
-//loadsh
-require.resolve('loadsh/index.js')
+require.resolve('fs-extra')
+require.resolve('lodash')
 
 require('./apps-resolve.js')
 

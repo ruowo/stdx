@@ -13,6 +13,7 @@ const {
 const {
   createAppResolve, // 创建 apps-resolve.js
   patchPkg, // 给pkg打布丁
+  patchCodegen, // 修正JSON5升级ava失败问题
   patchNodeSass // 需要使node-sass可以下载不同平台的包
 } = require('./patch.js')
 
@@ -26,6 +27,7 @@ function prepare () {
     // resetNodeAddins(),
     createAppResolve(),
     patchPkg(), 
+    patchCodegen(),
     createBinCommands(),
     copyPlatformResources(),
     Promise.all([

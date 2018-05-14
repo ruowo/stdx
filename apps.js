@@ -127,5 +127,11 @@ module.exports = {
   },
   'hs': {
     bin: 'http-server/bin/http-server'
+  },
+  'lerna': {
+    bin: 'lerna/bin/lerna.js'
+  },
+  'npm-check': {
+    bin: 'npm-check/bin/cli.js'
   }
 }
