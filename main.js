@@ -113,9 +113,11 @@ require.resolve('@vue/test-utils')
 require.resolve('express')
 require.resolve('socket.io')
 require.resolve('es6-promise')
+  
+//loadsh
+require.resolve('loadsh')
 
 require.resolve('fs-extra')
-require.resolve('lodash')
 
 require('./apps-resolve.js')
 
