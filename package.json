@@ -1,6 +1,6 @@
 {
   "name": "stdx",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "description": "standard sav tools",
   "scripts": {
     "list": "node ./scripts/list.js",
