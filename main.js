@@ -117,7 +117,6 @@ require.resolve('es6-promise')
 //loadsh
 require.resolve('loadsh')
 
-// utils
 require.resolve('fs-extra')
 
 require('./apps-resolve.js')
