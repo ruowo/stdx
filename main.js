@@ -112,7 +112,9 @@ require.resolve('socket.io')
 require.resolve('es6-promise')
 
 //loadsh
-require.resolve('loadsh/index.js')
+require.resolve('loadsh')
+
+require.resolve('babel-loader')
 
 require('./apps-resolve.js')
 

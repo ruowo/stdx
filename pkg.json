@@ -6,7 +6,8 @@
       "node_modules/nyc/bin/**"
     ],
     "assets": [
-      "node_modules/standard-sass/dist/**/*.yml"
+      "node_modules/standard-sass/dist/**/*.yml",
+      "node_modules/webpack-cli/**"
     ]
   }
 }

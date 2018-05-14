@@ -1,6 +1,6 @@
 module.exports = {
   'webpack': {
-    bin: 'webpack/bin/webpack.js',
+    bin: 'webpack-cli/bin/webpack.js',
     api: [
           'webpack',
           'webpack-sources',
@@ -12,13 +12,21 @@ module.exports = {
           'sass-loader',
           'css-loader',
           'vue-loader',
+          'style-loader',
           'file-loader',
           'url-loader',
           'webpack-bundle-analyzer',
-          'webpack-merge',
           'vue-style-loader',
+          'vue-html-loader',
           'uglifyjs-webpack-plugin',
-          'svg-sprite-loader'
+          'svg-sprite-loader',
+          'chalk',
+          'ora',
+          'rimraf',
+          'semver',
+          'shelljs',
+          'copy-webpack-plugin',
+          'babel-loader'
           ]
   },
   'webpack-dev-server': {
@@ -94,8 +102,7 @@ module.exports = {
       'babel-preset-stage-0',
       'babel-preset-stage-1',
       'babel-preset-stage-2',
-      'babel-preset-stage-3',
-      'babel-loader'
+      'babel-preset-stage-3'
     ]
   },
   'babel-node': {
