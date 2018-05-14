@@ -1,4 +1,30 @@
 module.exports = {
+  'webpack': {
+    bin: 'webpack/bin/webpack.js',
+    api: [
+          'webpack',
+          'webpack-sources',
+          'webpack-merge',
+          'webpack-dev-middleware',
+          'webpack-dev-addons',
+          'webpack-log',
+          'html-webpack-plugin',
+          'sass-loader',
+          'css-loader',
+          'vue-loader',
+          'file-loader',
+          'url-loader',
+          'webpack-bundle-analyzer',
+          'webpack-merge',
+          'vue-style-loader',
+          'uglifyjs-webpack-plugin',
+          'svg-sprite-loader'
+          ]
+  },
+  'webpack-dev-server': {
+    bin: 'webpack-dev-server/bin/webpack-dev-server.js',
+    api: 'webpack-dev-server'
+  },
   nyc: {
     bin: 'nyc/bin/nyc.js',
     api: [
@@ -69,6 +95,7 @@ module.exports = {
       'babel-preset-stage-1',
       'babel-preset-stage-2',
       'babel-preset-stage-3',
+      'babel-loader'
     ]
   },
   'babel-node': {

@@ -114,7 +114,6 @@ require.resolve('express')
 require.resolve('socket.io')
 require.resolve('es6-promise')
 
-// utils
 require.resolve('fs-extra')
 require.resolve('lodash')
 
