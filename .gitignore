@@ -65,3 +65,6 @@ typings/
 /cache
 /scripts/pnode/pnode-*
 /scripts/pnode/pnode
+
+/stdx-example/
+/dist/

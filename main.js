@@ -119,6 +119,9 @@ require.resolve('loadsh')
 
 require.resolve('fs-extra')
 
+require.resolve('jquery')
+
+
 require('./apps-resolve.js')
 
 }

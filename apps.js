@@ -26,8 +26,37 @@ module.exports = {
           'semver',
           'shelljs',
           'copy-webpack-plugin',
-          'babel-loader'
+          'babel-loader',
+          'babel-core',
+          'babel-helper-vue-jsx-merge-props',
+          'babel-plugin-syntax-jsx',
+          'babel-plugin-transform-runtime',
+          'babel-plugin-transform-vue-jsx',
+          'babel-preset-env',
+          'babel-preset-es2015',
+          'friendly-errors-webpack-plugin',
+          'node-notifier',
+          'optimize-css-assets-webpack-plugin',
+          'portfinder',
+          'mini-css-extract-plugin',
+          'postcss-import',
+          'postcss-loader',
+          'postcss-url',
+          'happypack'
           ]
+  },
+  'eslint': {
+    bin: 'eslint/bin/eslint.js',
+    api: [
+          'eslint',
+          'eslint-config-standard',
+          'eslint-friendly-formatter',
+          'eslint-loader',
+          'eslint-plugin-import',
+          'eslint-plugin-node',
+          'eslint-plugin-promise',
+          'eslint-plugin-standard',
+    ]
   },
   'webpack-dev-server': {
     bin: 'webpack-dev-server/bin/webpack-dev-server.js',
@@ -102,7 +131,8 @@ module.exports = {
       'babel-preset-stage-0',
       'babel-preset-stage-1',
       'babel-preset-stage-2',
-      'babel-preset-stage-3'
+      'babel-preset-stage-3',
+      'babel-polyfill'
     ]
   },
   'babel-node': {
