@@ -3,11 +3,9 @@ module.exports = {
     bin: 'webpack-cli/bin/webpack.js',
     api: [
           'webpack',
-          'webpack-sources',
           'webpack-merge',
-          'webpack-dev-middleware',
           'webpack-dev-addons',
-          'webpack-log',
+          'webpack-dev-middleware',
           'html-webpack-plugin',
           'sass-loader',
           'css-loader',
@@ -42,7 +40,9 @@ module.exports = {
           'postcss-import',
           'postcss-loader',
           'postcss-url',
-          'happypack'
+          'happypack',
+          'parse5',
+          'mime'
           ]
   },
   'eslint': {
