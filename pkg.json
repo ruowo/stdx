@@ -9,7 +9,8 @@
     ],
     "assets": [
       "node_modules/standard-sass/dist/**/*.yml",
-      "node_modules/webpack-cli/**"
+      "node_modules/webpack-cli/**",
+      "node_modules/webpack/**"
     ]
   }
 }
