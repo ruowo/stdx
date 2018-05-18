@@ -121,6 +121,8 @@ require.resolve('fs-extra')
 
 require.resolve('jquery')
 
+require.resolve('chalk')
+
 
 require('./apps-resolve.js')
 

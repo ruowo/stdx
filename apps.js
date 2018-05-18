@@ -1,4 +1,17 @@
 module.exports = {
+  'babel-cli': {
+    bin: 'babel-cli/bin/babel.js',
+    api: [
+      'babel-loader',
+      'babel-core',
+      'babel-helper-vue-jsx-merge-props',
+      'babel-plugin-syntax-jsx',
+      'babel-plugin-transform-runtime',
+      'babel-plugin-transform-vue-jsx',
+      'babel-preset-env',
+      'babel-preset-es2015',
+    ]
+  },
   'webpack': {
     bin: 'webpack-cli/bin/webpack.js',
     api: [
@@ -19,20 +32,11 @@ module.exports = {
           'uglifyjs-webpack-plugin',
           'extract-text-webpack-plugin',
           'svg-sprite-loader',
-          'chalk',
           'ora',
           'rimraf',
           'semver',
           'shelljs',
           'copy-webpack-plugin',
-          'babel-loader',
-          'babel-core',
-          'babel-helper-vue-jsx-merge-props',
-          'babel-plugin-syntax-jsx',
-          'babel-plugin-transform-runtime',
-          'babel-plugin-transform-vue-jsx',
-          'babel-preset-env',
-          'babel-preset-es2015',
           'friendly-errors-webpack-plugin',
           'node-notifier',
           'optimize-css-assets-webpack-plugin',
