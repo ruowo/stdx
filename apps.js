@@ -17,6 +17,7 @@ module.exports = {
           'vue-style-loader',
           'vue-html-loader',
           'uglifyjs-webpack-plugin',
+          'extract-text-webpack-plugin',
           'svg-sprite-loader',
           'chalk',
           'ora',

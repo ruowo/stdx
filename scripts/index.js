@@ -48,7 +48,7 @@ PKG_ONLY 只构建某个版本 win mac linux
 prepare()
 .then(buildPkgs)
 .catch(err => {
-  console.error('xxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  console.error('xxxxxxxxxxx安装node8.x试试看吧xxxxxxxxxxxxxxxxx')
   console.error(err)
   console.error('!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
   process.exit(1)
