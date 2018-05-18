@@ -9,7 +9,11 @@
     ],
     "assets": [
       "node_modules/standard-sass/dist/**/*.yml",
-      "node_modules/webpack-cli/**"
+      "node_modules/webpack-cli/**",
+      "node_modules/webpack/**",
+      "node_modules/babel-cli/**",
+      "node_modules/chalk/**",
+      "node_modules/babel-loader/**" 
     ]
   }
 }
