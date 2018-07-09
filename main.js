@@ -116,6 +116,8 @@ require.resolve('es6-promise')
   
 //loadsh
 require.resolve('loadsh')
+// indexDb
+require.resolve('dexie')
 
 require.resolve('fs-extra')
 
