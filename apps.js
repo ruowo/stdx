@@ -61,6 +61,7 @@ module.exports = {
           'eslint-plugin-node',
           'eslint-plugin-promise',
           'eslint-plugin-standard',
+          'eslint-plugin-typescript',
     ]
   },
   'webpack-dev-server': {
@@ -84,6 +85,7 @@ module.exports = {
       'standard',
       'eslint-plugin-vue',
       'eslint-plugin-html',
+      'typescript-eslint-parser',
     ]
   },
   rollup: {
@@ -105,6 +107,7 @@ module.exports = {
       'rollup-plugin-alias',
       'rollup-plugin-conditional',
       'rollup-plugin-multi-entry',
+      'rollup-plugin-typescript2',
     ]
   },
   uglifyjs: {
@@ -175,5 +178,11 @@ module.exports = {
   },
   'npm-check': {
     bin: 'npm-check/bin/cli.js'
+  },
+  'tsc': {
+    bin: 'typescript/lib/tsc',
+  },
+  'tsserver': {
+    bin: 'typescript/lib/tsserver',
   }
 }

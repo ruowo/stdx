@@ -5,7 +5,8 @@
       "node_modules/nyc/lib/**",
       "node_modules/nyc/bin/**",
       "node_modules/vue/dist/vue.js",
-      "node_modules/vue-router/dist/vue-router.js"
+      "node_modules/vue-router/dist/vue-router.js",
+      "node_modules/eslint-plugin-typescript/lib/**/**"
     ],
     "assets": [
       "node_modules/standard-sass/dist/**/*.yml",
@@ -13,7 +14,8 @@
       "node_modules/webpack/**",
       "node_modules/babel-cli/**",
       "node_modules/chalk/**",
-      "node_modules/babel-loader/**" 
+      "node_modules/babel-loader/**",
+      "node_modules/typescript/lib/**"
     ]
   }
 }
